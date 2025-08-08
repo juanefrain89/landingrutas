@@ -32,7 +32,7 @@ section {
     text-align: center;
     max-width: 800px;
     color: white;
-    animation: fadeIn 1s ease-in-out;
+    animation: fadeIn 2s ease-in-out;
     justify-content: center;
     display: flex
 ;
@@ -87,8 +87,11 @@ h1 span {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { 
+        
+        scale: 0.4;
+     }
+    to { scale: 1; }
 }
 
 
@@ -192,7 +195,7 @@ h1 span {
 
 .card {
     flex: 0 0 auto; /* NO crecer ni encoger, tamaño fijo según width */
-    width: calc(100% , +40px); /* ancho fijo para cada tarjeta */
+    width: calc(100% , +20px); /* ancho fijo para cada tarjeta */
     background: linear-gradient(180deg, #e6f2ff, #b3d9ff);
     border-radius: 10px;
     padding: 20px;
