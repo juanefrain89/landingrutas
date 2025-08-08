@@ -68,8 +68,9 @@ h1 span {
 }
 
 .solicitar-demo {
-     background: white;
-    border: 2px solid #21d821;
+    background: #0d9dda;
+    color: white;
+    border: none;
     padding: 15px 30px;
     font-size: 18px;
     border-radius: 8px;
