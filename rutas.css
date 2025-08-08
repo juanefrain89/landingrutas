@@ -184,6 +184,7 @@ h1 span {
     overflow-y: hidden; /* sin scroll vertical */
     /* opcional: para evitar salto de scroll */
     scroll-behavior: smooth;
+    padding: 40px;
 }
 
 
