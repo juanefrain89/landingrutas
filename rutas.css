@@ -177,6 +177,7 @@ h1 span {
 
 .s {
     width: 100%;
+    height: 600px;
     /* altura fija o según contenido */
     display: flex;
     gap: 40px;
@@ -198,4 +199,20 @@ h1 span {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
     text-align: left;
         height: 501px;
+}
+
+
+.s {
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  /* Ocultar scroll en Firefox */
+  scrollbar-width: none;
+
+  /* Ocultar scroll en Chrome, Edge, Safari */
+  -ms-overflow-style: none; /* IE y Edge */
+}
+
+.s::-webkit-scrollbar {
+  display: none; /* Safari y Chrome */
 }
