@@ -188,14 +188,14 @@ h1 span {
     overflow-y: hidden; /* sin scroll vertical */
     /* opcional: para evitar salto de scroll */
     scroll-behavior: smooth;
-    padding: 40px;
+    padding: 40px 10px;
 }
 
 
 
 .card {
     flex: 0 0 auto; /* NO crecer ni encoger, tamaño fijo según width */
-    width: calc(100% , +20px); /* ancho fijo para cada tarjeta */
+    width: calc(100%  + 5px); /* ancho fijo para cada tarjeta */
     background: linear-gradient(180deg, #e6f2ff, #b3d9ff);
     border-radius: 10px;
     padding: 20px;
