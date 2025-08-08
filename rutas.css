@@ -172,3 +172,29 @@ h1 span {
     background-color: #f4f7fb;
     padding-top: 60px;
 }
+
+
+
+.s {
+    width: 100%;
+    /* altura fija o según contenido */
+    display: flex;
+    gap: 40px;
+    overflow-x: auto;  /* scroll horizontal si falta espacio */
+    overflow-y: hidden; /* sin scroll vertical */
+    /* opcional: para evitar salto de scroll */
+    scroll-behavior: smooth;
+}
+
+
+
+.card {
+    flex: 0 0 auto; /* NO crecer ni encoger, tamaño fijo según width */
+    width: 413px; /* ancho fijo para cada tarjeta */
+    background: linear-gradient(180deg, #e6f2ff, #b3d9ff);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    text-align: left;
+        height: 501px;
+}
