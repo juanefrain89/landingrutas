@@ -1,29 +1,219 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="rutas.css">
+    <title>VentaRuta - Revoluciona tus Ventas Móviles</title>
+   <link rel="stylesheet" href="rutas.css">
 </head>
 <body>
-    
-  <section class="hero">
-     
-        <img src="https://datcon.com.mx/images/programmer-side-2400-1601.jpg" alt="">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>VentaRuta</h1>
+            <p>La app definitiva para vendedores móviles que quieren maximizar sus ganancias</p>
+            <div class="cta-buttons">
+                <a href="#demo" class="btn btn-primary">Ver Demo en Vivo</a>
+                <a href="#pricing" class="btn btn-secondary">Conocer Precios</a>
+            </div>
+        </div>
 
-<div class="contenedor"></div>
-<div class="contenedor1">
-   
-    <div class="texto">
-         <h1>App Roufy Haz que tu equipo venda mas y recorra menos</h1>
-         <h2>Roufy es la app para ventas en ruta que te ayuda a controlar gastos, optimizar recorridos y tener todo bajo control incluso sin internet</h2>
-    </div>
-   
-</div>
-<button>Ver demo</button>
+        <div class="phone-mockup">
+            <div class="phone-screen">
+                <div style="padding: 20px; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">📱</div>
+                    <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem;">VentaRuta</div>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">Tu negocio en tus manos</div>
+                </div>
+            </div>
+        </div>
     </section>
-    
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">¿Por qué elegir VentaRuta?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🛒</span>
+                    <h3 class="feature-title">Ventas desde el Celular</h3>
+                    <p class="feature-description">Registra ventas instantáneamente, imprime tickets al momento y mantén el control total de tu inventario desde tu smartphone.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">🗺️</span>
+                    <h3 class="feature-title">Control de Rutas</h3>
+                    <p class="feature-description">Rastrea kilómetros recorridos, gastos de combustible y optimiza tus rutas de venta para maximizar la rentabilidad.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">📊</span>
+                    <h3 class="feature-title">Dashboard en Tiempo Real</h3>
+                    <p class="feature-description">Visualiza tus métricas de venta, inventario y rutas desde un panel intuitivo que se actualiza automáticamente.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">📡</span>
+                    <h3 class="feature-title">Funciona Sin Internet</h3>
+                    <p class="feature-description">Continúa vendiendo aunque no tengas conexión. Los datos se sincronizan automáticamente cuando recuperes la señal.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">📈</span>
+                    <h3 class="feature-title">Reportes Inteligentes</h3>
+                    <p class="feature-description">Obtén insights detallados sobre tus ventas por cliente, producto, ruta o período. Toma decisiones basadas en datos reales.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">🔄</span>
+                    <h3 class="feature-title">Sincronización Automática</h3>
+                    <p class="feature-description">Todos tus datos se respaldan automáticamente en la nube. Accede desde cualquier dispositivo sin perder información.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <h2 class="section-title" style="color: white; margin-bottom: 3rem;">Resultados que hablan por sí solos</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number" id="stat1">2,847</span>
+                    <span class="stat-label">Vendedores activos</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="stat2">$1,250,000</span>
+                    <span class="stat-label">Facturación procesada</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="stat3">45,230</span>
+                    <span class="stat-label">Tickets emitidos</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="stat4">87%</span>
+                    <span class="stat-label">Aumento en ventas</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section class="demo" id="demo">
+        <div class="demo-container">
+            <div class="demo-content">
+                <h2>Dashboard en Tiempo Real</h2>
+                <p>Mira cómo nuestros vendedores están utilizando VentaRuta en este momento. Datos reales, resultados reales.</p>
+                <a href="#pricing" class="btn btn-primary">Comenzar Ahora</a>
+            </div>
+
+            <div class="demo-dashboard">
+                <div class="dashboard-header">
+                    <div class="dashboard-title">Panel de Control</div>
+                    <div class="live-indicator">
+                        <span class="live-dot"></span>
+                        En vivo
+                    </div>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <span class="metric-value" id="live-sales">23</span>
+                        <div class="metric-label">Ventas Hoy</div>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value" id="live-revenue">$3,450.50</span>
+                        <div class="metric-label">Ingresos</div>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value" id="live-routes">8</span>
+                        <div class="metric-label">Rutas Activas</div>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value" id="live-products">187</span>
+                        <div class="metric-label">Productos</div>
+                    </div>
+                </div>
+
+                <div style="background: #4a5568; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                    <div style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 0.5rem;">Última venta:</div>
+                    <div id="last-sale" style="font-weight: 600;">
+                        <strong>Tienda El Sol</strong><br>
+                        3x Coca Cola 600ml - $46.50<br>
+                        <small style="opacity: 0.7;">14:32:15</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Planes que se adaptan a tu negocio</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="plan-name">Básico</h3>
+                    <div class="plan-price">$29</div>
+                    <div class="plan-period">por mes</div>
+                    <ul class="plan-features">
+                        <li>1 Vendedor</li>
+                        <li>Hasta 500 productos</li>
+                        <li>Impresión de tickets</li>
+                        <li>Control básico de rutas</li>
+                        <li>Reportes básicos</li>
+                        <li>Soporte por email</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Comenzar Gratis</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <h3 class="plan-name">Profesional</h3>
+                    <div class="plan-price">$59</div>
+                    <div class="plan-period">por mes</div>
+                    <ul class="plan-features">
+                        <li>Hasta 5 Vendedores</li>
+                        <li>Productos ilimitados</li>
+                        <li>Dashboard en tiempo real</li>
+                        <li>Control avanzado de rutas</li>
+                        <li>Reportes avanzados</li>
+                        <li>Sincronización automática</li>
+                        <li>Soporte prioritario</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Más Popular</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3 class="plan-name">Empresarial</h3>
+                    <div class="plan-price">$99</div>
+                    <div class="plan-period">por mes</div>
+                    <ul class="plan-features">
+                        <li>Vendedores ilimitados</li>
+                        <li>API completa</li>
+                        <li>Integración con ERP</li>
+                        <li>Análisis avanzado</li>
+                        <li>Soporte 24/7</li>
+                        <li>Capacitación incluida</li>
+                        <li>Gerente de cuenta dedicado</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Contactar Ventas</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>¿Listo para revolucionar tus ventas?</h2>
+            <p>Únete a miles de vendedores que ya aumentaron sus ganancias con VentaRuta. Prueba gratis por 14 días.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">Comenzar Prueba Gratuita</a>
+                <a href="#" class="btn btn-secondary">Solicitar Demo</a>
+            </div>
+        </div>
+    </section>
 
 </body>
+
 </html>
