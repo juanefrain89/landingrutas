@@ -795,10 +795,7 @@
                     <span class="stat-number" id="stat1">2,847</span>
                     <span class="stat-label">Vendedores activos</span>
                 </div>
-                <div class="stat-item scroll-animate-bounce">
-                    <span class="stat-number" id="stat2">$1,250,000</span>
-                    <span class="stat-label">Facturación procesada</span>
-                </div>
+             
                 <div class="stat-item scroll-animate-bounce">
                     <span class="stat-number" id="stat3">45,230</span>
                     <span class="stat-label">Tickets emitidos</span>
@@ -984,8 +981,7 @@
                 }
                 
                 if (element.id === 'stat2') {
-                  element.textContent = '+' + Math.floor(current).toLocaleString();
-
+                    element.textContent = "+" + Math.floor(current).toLocaleString();
                 } else if (element.id === 'stat4') {
                     element.textContent = Math.floor(current) + '%';
                 } else {
@@ -1038,7 +1034,13 @@
                 const currentRevenue = parseFloat(revenue.textContent.replace('', '').replace(',', ''));
                 
                 sales.textContent = currentSales + Math.floor(Math.random() * 3);
-                revenue.textContent = ' + (currentRevenue + Math.random() * 200).toFixed(2)';
+let revenueValue = Number(currentRevenue) || 0; // Evita NaN
+revenue.textContent = '+ ' + (revenueValue + Math.random() * 200).toLocaleString('en-US', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+});
+
+
                 routes.textContent = 7 + Math.floor(Math.random() * 4);
                 products.textContent = 180 + Math.floor(Math.random() * 20);
 
