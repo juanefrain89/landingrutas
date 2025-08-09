@@ -286,9 +286,23 @@ section{
         /* Demo Section */
         .demo {
             padding: 100px 20px;
-            background: white;
+         
+            position: relative;
         }
 
+      .demo div:not(:first-child) {
+z-index: 1;
+        }
+
+        .fondo2{
+            position: absolute;
+            width: calc( 100% + 40px);
+            height:calc( 100% + 100px);
+            background-color: black;
+            opacity: 10%;
+            left: -20px;
+            top: -50px;
+        }
         .demo-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -302,12 +316,13 @@ section{
             font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 2rem;
-            color: #2d3748;
+            color: black;
         }
 
         .demo-content p {
             font-size: 1.2rem;
-            color: #4a5568;
+            color: #2d3748;
+            text-align: center;
             margin-bottom: 2rem;
         }
 
@@ -815,14 +830,15 @@ section{
 
     <!-- Demo Section -->
     <section class="demo" id="demo">
-        <div class="demo-container">
+<img class="fondo2" src="https://datcon.com.mx/images/programmer-2400-1601.jpg"></div>
+        <div class="demo-container" style="z-index:  1;">
             <div class="demo-content scroll-animate-left">
                 <h2>Dashboard en Tiempo Real</h2>
                 <p>Mira cómo nuestros vendedores están utilizando VentaRuta en este momento. Datos reales, resultados reales.</p>
                 <a href="#pricing" class="btn btn-primary">Comenzar Ahora</a>
             </div>
 
-            <div class="demo-dashboard scroll-animate-right">
+            <div class="demo-dashboard scroll-animate-right" style="z-index: 1;">
                 <div class="dashboard-header">
                     <div class="dashboard-title">Panel de Control</div>
                     <div class="live-indicator">
@@ -831,7 +847,7 @@ section{
                     </div>
                 </div>
 
-                <div class="metrics-grid">
+                <div class="metrics-grid" >
                     <div class="metric-card">
                         <span class="metric-value" id="live-sales">23</span>
                         <div class="metric-label">Ventas Hoy</div>
