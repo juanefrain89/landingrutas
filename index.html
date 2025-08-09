@@ -4,12 +4,724 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VentaRuta - Revoluciona tus Ventas Móviles</title>
-   <link rel="stylesheet" href="rutas.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh; 
+            width: 100%; 
+            background: url("https://datcon.com.mx/images/programmer-side-2400-1601.jpg") no-repeat center center;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .fondo{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background-color: black;
+            opacity: .5;
+            top: -50px;
+        }
+
+        .hero p{
+            color: aqua;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="grad" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:rgba(255,255,255,0.1);stop-opacity:1" /><stop offset="100%" style="stop-color:rgba(255,255,255,0);stop-opacity:1" /></radialGradient></defs><circle cx="200" cy="200" r="3" fill="white" opacity="0.6"><animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/></circle><circle cx="800" cy="300" r="2" fill="white" opacity="0.4"><animate attributeName="opacity" values="0.4;0.8;0.4" dur="3s" repeatCount="indefinite"/></circle><circle cx="300" cy="700" r="4" fill="white" opacity="0.5"><animate attributeName="opacity" values="0.5;1;0.5" dur="2.5s" repeatCount="indefinite"/></circle><circle cx="700" cy="800" r="3" fill="white" opacity="0.7"><animate attributeName="opacity" values="0.7;1;0.7" dur="1.8s" repeatCount="indefinite"/></circle></svg>') no-repeat center center;
+            background-size: cover;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #a8edea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: slideInUp 1s ease-out 0.3s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: slideInUp 1s ease-out 0.6s both;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            box-shadow: 0 10px 30px rgba(238, 90, 36, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        /* Phone Mockup */
+        .phone-mockup {
+            position: absolute;
+            right: -100px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 300px;
+            height: 600px;
+            background: #1a1a1a;
+            border-radius: 25px;
+            padding: 20px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            animation: phoneFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes phoneFloat {
+            0%, 100% { transform: translateY(-50%) rotate(0deg); }
+            50% { transform: translateY(-60%) rotate(1deg); }
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 20px;
+            background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #ff6b6b);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
+
+        .feature-description {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #4facfe;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Demo Section */
+        .demo {
+            padding: 100px 20px;
+            background: white;
+        }
+
+        .demo-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .demo-content h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: #2d3748;
+        }
+
+        .demo-content p {
+            font-size: 1.2rem;
+            color: #4a5568;
+            margin-bottom: 2rem;
+        }
+
+        .demo-dashboard {
+            background: #1a202c;
+            border-radius: 20px;
+            padding: 2rem;
+            color: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #2d3748;
+        }
+
+        .dashboard-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .live-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #48bb78;
+        }
+
+        .live-dot {
+            width: 10px;
+            height: 10px;
+            background: #48bb78;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .metric-card {
+            background: #2d3748;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #4facfe;
+            display: block;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 0.5rem;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .pricing-card.featured .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px) scale(1.02);
+        }
+
+        .pricing-card.featured:hover {
+            transform: translateY(-5px) scale(1.08);
+        }
+
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .plan-price {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-period {
+            opacity: 0.7;
+            margin-bottom: 2rem;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .plan-features li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .plan-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #48bb78;
+            font-weight: bold;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .final-cta h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+        }
+
+        .final-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes bounce {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll Animation Classes */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-animate-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .scroll-animate-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scroll-animate-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .scroll-animate-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scroll-animate-scale {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .scroll-animate-scale.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .scroll-animate-bounce {
+            opacity: 0;
+            transform: translateY(-30px);
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .scroll-animate-bounce.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Stagger delays for grid items */
+        .feature-card:nth-child(1) { transition-delay: 0.1s; }
+        .feature-card:nth-child(2) { transition-delay: 0.2s; }
+        .feature-card:nth-child(3) { transition-delay: 0.3s; }
+        .feature-card:nth-child(4) { transition-delay: 0.4s; }
+        .feature-card:nth-child(5) { transition-delay: 0.5s; }
+        .feature-card:nth-child(6) { transition-delay: 0.6s; }
+
+        .stat-item:nth-child(1) { transition-delay: 0.1s; }
+        .stat-item:nth-child(2) { transition-delay: 0.2s; }
+        .stat-item:nth-child(3) { transition-delay: 0.3s; }
+        .stat-item:nth-child(4) { transition-delay: 0.4s; }
+
+        .pricing-card:nth-child(1) { transition-delay: 0.1s; }
+        .pricing-card:nth-child(2) { transition-delay: 0.2s; }
+        .pricing-card:nth-child(3) { transition-delay: 0.3s; }
+
+        .demo-content{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .phone-mockup {
+                display: none;
+            }
+
+            .demo-container {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (min-width: 801px) and (max-width: 1199px) {
+            .hero-content{
+                max-width: 500px !important;
+            }
+        }
+
+        @media (min-width: 801px) and (max-width: 950px) {
+            .hero-content{
+                max-width: 300px !important;
+            }
+        }
+
+        @media (max-width: 801px){
+            .cta-buttons{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 100px;
+            }
+
+            .hero{
+                align-items: flex-start;
+                padding-top: 100px;
+            }
+
+            .hero-content{
+                height: calc(100vh - 100px);
+                width: 80%;
+            }
+
+            .hero p{
+                margin-top: 50px;
+                font-size: 26px;
+            }
+        }
+
+        /* Progress Bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #ff6b6b);
+            z-index: 1000;
+            transition: width 0.3s ease;
+        }
+
+        /* Parallax Effect */
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            background-size: cover;
+            background-position: center;
+            will-change: transform;
+        }
+    </style>
 </head>
 <body>
+    <!-- Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
   
     <section class="hero">
-        <div class="fondo">   </div>
+        <div class="fondo parallax-bg"></div>
         <div class="hero-content">
             <h1>VentaRuta</h1>
             <p>La app definitiva para vendedores móviles que quieren maximizar sus ganancias</p>
@@ -28,45 +740,44 @@
                 </div>
             </div>
         </div>
-      
     </section>
 
     <!-- Features Section -->
     <section class="features">
         <div class="container">
-            <h2 class="section-title">¿Por qué elegir VentaRuta?</h2>
+            <h2 class="section-title scroll-animate">¿Por qué elegir VentaRuta?</h2>
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="feature-card scroll-animate">
                     <span class="feature-icon">🛒</span>
                     <h3 class="feature-title">Ventas desde el Celular</h3>
                     <p class="feature-description">Registra ventas instantáneamente, imprime tickets al momento y mantén el control total de tu inventario desde tu smartphone.</p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card scroll-animate">
                     <span class="feature-icon">🗺️</span>
                     <h3 class="feature-title">Control de Rutas</h3>
                     <p class="feature-description">Rastrea kilómetros recorridos, gastos de combustible y optimiza tus rutas de venta para maximizar la rentabilidad.</p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card scroll-animate">
                     <span class="feature-icon">📊</span>
                     <h3 class="feature-title">Dashboard en Tiempo Real</h3>
                     <p class="feature-description">Visualiza tus métricas de venta, inventario y rutas desde un panel intuitivo que se actualiza automáticamente.</p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card scroll-animate">
                     <span class="feature-icon">📡</span>
                     <h3 class="feature-title">Funciona Sin Internet</h3>
                     <p class="feature-description">Continúa vendiendo aunque no tengas conexión. Los datos se sincronizan automáticamente cuando recuperes la señal.</p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card scroll-animate">
                     <span class="feature-icon">📈</span>
                     <h3 class="feature-title">Reportes Inteligentes</h3>
                     <p class="feature-description">Obtén insights detallados sobre tus ventas por cliente, producto, ruta o período. Toma decisiones basadas en datos reales.</p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card scroll-animate">
                     <span class="feature-icon">🔄</span>
                     <h3 class="feature-title">Sincronización Automática</h3>
                     <p class="feature-description">Todos tus datos se respaldan automáticamente en la nube. Accede desde cualquier dispositivo sin perder información.</p>
@@ -78,21 +789,21 @@
     <!-- Stats Section -->
     <section class="stats">
         <div class="container">
-            <h2 class="section-title" style="color: white; margin-bottom: 3rem;">Resultados que hablan por sí solos</h2>
+            <h2 class="section-title scroll-animate" style="color: white; margin-bottom: 3rem;">Resultados que hablan por sí solos</h2>
             <div class="stats-grid">
-                <div class="stat-item">
+                <div class="stat-item scroll-animate-bounce">
                     <span class="stat-number" id="stat1">2,847</span>
                     <span class="stat-label">Vendedores activos</span>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item scroll-animate-bounce">
                     <span class="stat-number" id="stat2">$1,250,000</span>
                     <span class="stat-label">Facturación procesada</span>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item scroll-animate-bounce">
                     <span class="stat-number" id="stat3">45,230</span>
                     <span class="stat-label">Tickets emitidos</span>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item scroll-animate-bounce">
                     <span class="stat-number" id="stat4">87%</span>
                     <span class="stat-label">Aumento en ventas</span>
                 </div>
@@ -103,13 +814,13 @@
     <!-- Demo Section -->
     <section class="demo" id="demo">
         <div class="demo-container">
-            <div class="demo-content">
+            <div class="demo-content scroll-animate-left">
                 <h2>Dashboard en Tiempo Real</h2>
                 <p>Mira cómo nuestros vendedores están utilizando VentaRuta en este momento. Datos reales, resultados reales.</p>
                 <a href="#pricing" class="btn btn-primary">Comenzar Ahora</a>
             </div>
 
-            <div class="demo-dashboard">
+            <div class="demo-dashboard scroll-animate-right">
                 <div class="dashboard-header">
                     <div class="dashboard-title">Panel de Control</div>
                     <div class="live-indicator">
@@ -152,9 +863,9 @@
     <!-- Pricing Section -->
     <section class="pricing" id="pricing">
         <div class="container">
-            <h2 class="section-title">Planes que se adaptan a tu negocio</h2>
+            <h2 class="section-title scroll-animate">Planes que se adaptan a tu negocio</h2>
             <div class="pricing-grid">
-                <div class="pricing-card">
+                <div class="pricing-card scroll-animate-scale">
                     <h3 class="plan-name">Básico</h3>
                     <div class="plan-price">$29</div>
                     <div class="plan-period">por mes</div>
@@ -169,7 +880,7 @@
                     <a href="#" class="btn btn-primary">Comenzar Gratis</a>
                 </div>
 
-                <div class="pricing-card featured">
+                <div class="pricing-card featured scroll-animate-scale">
                     <h3 class="plan-name">Profesional</h3>
                     <div class="plan-price">$59</div>
                     <div class="plan-period">por mes</div>
@@ -185,7 +896,7 @@
                     <a href="#" class="btn btn-primary">Más Popular</a>
                 </div>
 
-                <div class="pricing-card">
+                <div class="pricing-card scroll-animate-scale">
                     <h3 class="plan-name">Empresarial</h3>
                     <div class="plan-price">$99</div>
                     <div class="plan-period">por mes</div>
@@ -206,7 +917,7 @@
 
     <!-- Final CTA -->
     <section class="final-cta">
-        <div class="container">
+        <div class="container scroll-animate">
             <h2>¿Listo para revolucionar tus ventas?</h2>
             <p>Únete a miles de vendedores que ya aumentaron sus ganancias con VentaRuta. Prueba gratis por 14 días.</p>
             <div class="cta-buttons">
@@ -216,6 +927,190 @@
         </div>
     </section>
 
-</body>
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with scroll animation classes
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll(
+                '.scroll-animate, .scroll-animate-left, .scroll-animate-right, .scroll-animate-scale, .scroll-animate-bounce'
+            );
+            
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+
+        // Scroll progress bar
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            document.getElementById('scroll-progress').style.width = scrolled + '%';
+        });
+
+        // Parallax effect for hero background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const parallaxElements = document.querySelectorAll('.parallax-bg');
+            
+            parallaxElements.forEach(element => {
+                const speed = 0.5;
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Counter animation for stats
+        function animateCounter(element, target, duration = 2000) {
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                
+                if (element.id === 'stat2') {
+                    element.textContent = ' + Math.floor(current).toLocaleString()';
+                } else if (element.id === 'stat4') {
+                    element.textContent = Math.floor(current) + '%';
+                } else {
+                    element.textContent = Math.floor(current).toLocaleString();
+                }
+            }, 16);
+        }
+
+        // Trigger counter animations when stats section is visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(document.getElementById('stat1'), 2847);
+                    animateCounter(document.getElementById('stat2'), 1250000);
+                    animateCounter(document.getElementById('stat3'), 45230);
+                    animateCounter(document.getElementById('stat4'), 87);
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const statsSection = document.querySelector('.stats');
+            if (statsSection) {
+                statsObserver.observe(statsSection);
+            }
+        });
+
+        // Live demo data updates
+        function updateLiveDemo() {
+            const sales = document.getElementById('live-sales');
+            const revenue = document.getElementById('live-revenue');
+            const routes = document.getElementById('live-routes');
+            const products = document.getElementById('live-products');
+            const lastSale = document.getElementById('last-sale');
+
+            const stores = [
+                'Tienda El Sol', 'Súper López', 'Abarrotes San Juan', 'Comercial Rivera',
+                'Tienda Familiar', 'Minisuper Central', 'Abarrotes La Esquina'
+            ];
+
+            const products_list = [
+                'Coca Cola 600ml', 'Pepsi 500ml', 'Agua Bonafont', 'Sabritas Original',
+                'Doritos Nacho', 'Pan Bimbo', 'Leche Lala', 'Yogurt Danone'
+            ];
+
+            if (sales && revenue && routes && products && lastSale) {
+                // Random updates
+                const currentSales = parseInt(sales.textContent);
+                const currentRevenue = parseFloat(revenue.textContent.replace('', '').replace(',', ''));
+                
+                sales.textContent = currentSales + Math.floor(Math.random() * 3);
+                revenue.textContent = ' + (currentRevenue + Math.random() * 200).toFixed(2)';
+                routes.textContent = 7 + Math.floor(Math.random() * 4);
+                products.textContent = 180 + Math.floor(Math.random() * 20);
+
+                const randomStore = stores[Math.floor(Math.random() * stores.length)];
+                const randomProduct = products_list[Math.floor(Math.random() * products_list.length)];
+                const randomQuantity = 1 + Math.floor(Math.random() * 5);
+                const randomPrice = (15 + Math.random() * 85).toFixed(2);
+                const now = new Date();
+                const timeString = now.toLocaleTimeString('es-MX', { hour12: false });
+
+                lastSale.innerHTML = `
+                    <strong>${randomStore}</strong><br>
+                    ${randomQuantity}x ${randomProduct} - ${randomPrice}<br>
+                    <small style="opacity: 0.7;">${timeString}</small>
+                `;
+            }
+        }
+
+        // Update demo every 3-8 seconds
+        setInterval(updateLiveDemo, 3000 + Math.random() * 5000);
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll-triggered animations to elements as they enter viewport
+        function addScrollAnimations() {
+            const elements = document.querySelectorAll('.feature-card, .stat-item, .pricing-card');
+            
+            elements.forEach((element, index) => {
+                // Add staggered delay based on position
+                element.style.transitionDelay = (index % 6) * 0.1 + 's';
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', addScrollAnimations);
+
+        // Mouse parallax effect on feature cards
+        document.addEventListener('mousemove', (e) => {
+            const cards = document.querySelectorAll('.feature-card');
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+            
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const cardCenterX = rect.left + rect.width / 2;
+                const cardCenterY = rect.top + rect.height / 2;
+                
+                const deltaX = (mouseX - cardCenterX) * 0.01;
+                const deltaY = (mouseY - cardCenterY) * 0.01;
+                
+                card.style.transform = `translateY(-10px) rotateX(${deltaY}deg) rotateY(${deltaX}deg)`;
+            });
+        });
+
+        // Reset card transforms when mouse leaves
+        document.addEventListener('mouseleave', () => {
+            const cards = document.querySelectorAll('.feature-card');
+            cards.forEach(card => {
+                card.style.transform = '';
+            });
+        });
+    </script>
+
+</body>
 </html>
