@@ -984,7 +984,8 @@
                 }
                 
                 if (element.id === 'stat2') {
-                    element.textContent = ' + Math.floor(current).toLocaleString()';
+                  element.textContent = '+' + Math.floor(current).toLocaleString();
+
                 } else if (element.id === 'stat4') {
                     element.textContent = Math.floor(current) + '%';
                 } else {
