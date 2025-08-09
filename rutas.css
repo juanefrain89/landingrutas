@@ -1,221 +1,86 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-section {
-    width: 100vw;
-    height: 95vh;
+.hero{
    
-}
-
-.sesion1{
-     background: linear-gradient(180deg, rgba(0, 22, 66, 1) 0%, rgba(0, 30, 91, 1) 5%, rgba(2, 80, 217, 1) 100%);
-    display: flex
-;
-    justify-content: center;
-    padding: 20px;
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+      background-size: 100% 100%;
+      position: relative;
     
 }
 
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
 
 
 
 
-
-.contenido-centrado {
-    text-align: center;
-    max-width: 800px;
-    color: white;
-    animation: fadeIn 2s ease-in-out;
-    justify-content: center;
-    display: flex
-;
-    flex-direction: column;
-    width: 90%;
+.hero > img{
+    width: 100%;
     height: 100%;
-    padding-top: 67px;
-    min-height: 562px;
-    box-sizing: border-box !important;
-    padding-bottom: 40px;
-
-}
-h1 {
-    font-size: 42px;
-    line-height: 1.2;
-    margin-bottom: 20px;
+    position: absolute;
+    object-fit: cover;
+    object-position: top;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: .2;
 }
 
-h1 span {
-    color: #0d9dda;
-}
-
-.descripcion {
-    color: #d1d1d1;
-    margin-top: 23px;
-    font-size: 20px;
-    font-family: monospace;
-    font-style: italic;
-    font-weight: 100;
-    max-width: 650px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.solicitar-demo {
-    background: #8BC34A;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    border-radius: 8px;
-    margin-top: auto;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.solicitar-demo:hover {
-    background: #0b87b8;
-    transform: translateY(-3px);
-   
-}
-
-@keyframes fadeIn {
-    from { 
-        
-        scale: 0.4;
-     }
-    to { scale: 1; }
-}
-
-
-
-
-
-
-
-
-
-
-.card {
-    background: linear-gradient(180deg, #e6f2ff, #b3d9ff);
-    border-radius: 10px;
-    padding: 20px;
-    max-width: 350px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    text-align: left;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-}
-
-.tag {
-    display: inline-block;
-    background: #fff;
-    color: #0070d2;
-    font-size: 12px;
-    padding: 4px 8px;
-    border-radius: 12px;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-
-
-
-.price {
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.btn-primary {
-    background-color: #0070d2;
-    color: white;
-    border: none;
-    padding: 12px;
-    width: 100%;
-    border-radius: 6px;
-    font-size: 16px;
-    margin-top: 15px;
-    cursor: pointer;
-}
-
-.btn-primary:hover {
-    background-color: #005fa3;
-}
-
-.btn-secondary {
-    background-color: white;
-    color: #0070d2;
-    border: 2px solid #0070d2;
-    padding: 12px;
-    width: 100%;
-    border-radius: 6px;
-    font-size: 16px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.btn-secondary:hover {
-    background-color: #f0f8ff;
-}
-
-
-.sesion2{
-        display: flex
-;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px 40px;
-    padding-bottom: 61px;
-    background-color: #f4f7fb;
-    padding-top: 60px;
-}
-
-
-
-.s {
-    width: 100%;
-    height: 600px;
-    /* altura fija o según contenido */
+.contenedor1{
     display: flex;
-    gap: 40px;
-    overflow-x: auto;  /* scroll horizontal si falta espacio */
-    overflow-y: hidden; /* sin scroll vertical */
-    /* opcional: para evitar salto de scroll */
-    scroll-behavior: smooth;
-    padding: 40px 10px;
+    padding-top: 10%;
+    width: 100%;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+}
+
+.texto{
+    max-width: 600px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.texto h1{
+   text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    z-index: 1;
 }
 
 
-
-.card {
-    flex: 0 0 auto; /* NO crecer ni encoger, tamaño fijo según width */
-    width: calc(100%  + 5px); /* ancho fijo para cada tarjeta */
-    background: linear-gradient(180deg, #e6f2ff, #b3d9ff);
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-    text-align: left;
-        height: 501px;
+.texto h2{
+    font-weight: normal;
+    text-align: center;
+    font-style: italic;
+    margin-top: 85px;
+    font-weight:100;
+    z-index: 1;
+    color: #373636;
 }
 
 
-.s {
-  overflow-x: auto;
-  overflow-y: hidden;
+section button{
+    bottom: 5%;
+    right: 5%;
+    position: absolute;
+    background-color: #f2a344;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    padding: 1.3rem 2rem;
+    font-size: 18px;
+    width: 196px;
+    height: 60px;
+    color: white;
+    z-index: 1;
 
-  /* Ocultar scroll en Firefox */
-  scrollbar-width: none;
 
-  /* Ocultar scroll en Chrome, Edge, Safari */
-  -ms-overflow-style: none; /* IE y Edge */
 }
 
-.s::-webkit-scrollbar {
-  display: none; /* Safari y Chrome */
+button{
+    cursor: pointer;
 }
