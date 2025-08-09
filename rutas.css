@@ -90,4 +90,7 @@ button{
     .texto h1{
  font-size: 30px;       
     }
+    .texto h2{
+        font-size: 25px;
+    }
 }
