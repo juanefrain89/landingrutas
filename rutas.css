@@ -93,4 +93,7 @@ button{
     .texto h2{
         font-size: 25px;
     }
+    .contenedor1{
+        padding-top: 20%;
+    }
 }
