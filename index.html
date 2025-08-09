@@ -795,7 +795,10 @@
                     <span class="stat-number" id="stat1">2,847</span>
                     <span class="stat-label">Vendedores activos</span>
                 </div>
-             
+                <div class="stat-item scroll-animate-bounce">
+                    <span class="stat-number" id="stat2">$9,250</span>
+                    <span class="stat-label">Facturación procesada</span>
+                </div>
                 <div class="stat-item scroll-animate-bounce">
                     <span class="stat-number" id="stat3">45,230</span>
                     <span class="stat-label">Tickets emitidos</span>
@@ -995,7 +998,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     animateCounter(document.getElementById('stat1'), 2847);
-                    animateCounter(document.getElementById('stat2'), 1250000);
+                    animateCounter(document.getElementById('stat2'), 1250);
                     animateCounter(document.getElementById('stat3'), 45230);
                     animateCounter(document.getElementById('stat4'), 87);
                     statsObserver.unobserve(entry.target);
