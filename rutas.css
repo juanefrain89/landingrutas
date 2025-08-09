@@ -24,7 +24,13 @@
     justify-content: center;
     text-align: center;
     color: white;
+   
     overflow: hidden;
+}
+
+
+.hero p{
+    color:  aqua;
 }
 
         .hero::before {
@@ -557,6 +563,7 @@
 
 .hero p{
     margin-top: 50px;
+    font-size: 26px;
 }
  }
 
