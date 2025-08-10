@@ -253,17 +253,33 @@ section{
         /* Stats Section */
         .stats {
             padding: 80px 20px;
-            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+           background: url("anuncio.jpg") ;
             color: white;
             text-align: center;
+            position: relative;
         }
+.fondo3{
+    
+      width: 100%;
+    height: calc(100% + 50px);
+    position: absolute;
+    background-color: black;
+    opacity: 64%;
+    left: 0;
+    background-color: black;
+    top: -50px;
 
+}
+
+
+    
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
             max-width: 1000px;
             margin: 0 auto;
+           
         }
 
         .stat-item {
@@ -804,7 +820,8 @@ z-index: 1;
     </section>
 
     <!-- Stats Section -->
-    <section class="stats">
+    <section class="stats" >
+        <div src="anuncio.jpg" class="fondo3" alt=""></div>
         <div class="container">
             <h2 class="section-title scroll-animate" style="color: white; margin-bottom: 3rem;">Resultados que hablan por sí solos</h2>
             <div class="stats-grid">
