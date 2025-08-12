@@ -467,6 +467,23 @@ z-index: 1;
             transform: translateY(-5px) scale(1.08);
         }
 
+        .pricing-card{
+            position: relative;
+        }
+
+        .nube{
+          
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    z-index: -1;
+    display: flex
+;
+    height: 17%;
+    width: 100%;
+    overflow: hidden;
+        }
+
         .plan-name {
             font-size: 1.5rem;
             font-weight: 700;
@@ -933,6 +950,11 @@ z-index: 1;
             <h2 class="section-title scroll-animate">Planes que se adaptan a tu negocio</h2>
             <div class="pricing-grid">
                 <div class="pricing-card scroll-animate-scale">
+                    <div class="nube">
+                        <img src="nube.webp" alt=""></img>
+                         <img src="nube.webp" alt=""></img>
+                         
+                    </div>
                     <h3 class="plan-name">Básico</h3>
                     <div class="plan-price">$29</div>
                     <div class="plan-period">por mes</div>
@@ -963,7 +985,12 @@ z-index: 1;
                     <a href="#" class="btn btn-primary">Más Popular</a>
                 </div>
 
-                <div class="pricing-card scroll-animate-scale">
+                <div style="position: relative;" class="pricing-card  scroll-animate-scale">
+                      <div class="nube">
+                        <img src="nube.webp" alt=""></img>
+                         <img src="nube.webp" alt=""></img>
+                         
+                    </div>
                     <h3 class="plan-name">Empresarial</h3>
                     <div class="plan-price">$99</div>
                     <div class="plan-period">por mes</div>
