@@ -627,6 +627,9 @@ z-index: 1;
         .scroll-animate.visible {
             opacity: 1;
             transform: translateY(0);
+            display: flex
+;
+    flex-direction: column;
         }
 
         .scroll-animate-left {
@@ -796,6 +799,16 @@ z-index: 1;
             background-position: center;
             will-change: transform;
         }
+
+
+        .imagenes{
+              margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-top: 6px;
+    margin-bottom: 20px;
+
+        }
     </style>
 </head>
 <body>
@@ -832,7 +845,9 @@ z-index: 1;
                 <div class="feature-card scroll-animate">
                     <span class="feature-icon">📱</span>
                     <h3 class="feature-title">Ventas desde el Celular</h3>
+                    
                     <p class="feature-description">Registra ventas instantáneamente, imprime tickets al momento y mantén el control total de tu inventario desde tu smartphone.</p>
+                    <img class="imagenes" src="venta.webp" alt="">
                 </div>
 
                 <div class="feature-card scroll-animate">
