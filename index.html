@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="rutas.css">  
 </head>
 <body>
-    <!-- Progress Bar -->
+   
     <div class="scroll-progress" id="scroll-progress"></div>
   
     <section class="hero">
@@ -32,7 +32,7 @@
         </div>
     </section>
 
-    <!-- Features Section -->
+
     <section class="features">
         <div class="container">
             <h2 class="section-title scroll-animate">¿Por qué elegir VentaRuta?</h2>
@@ -88,7 +88,7 @@
         </div>
     </section>
 
-    <!-- Stats Section -->
+
     <section class="stats" >
         <div src="anuncio.jpg" class="fondo3" alt=""></div>
         <div class="container">
@@ -114,7 +114,7 @@
         </div>
     </section>
 
-    <!-- Demo Section -->
+ 
     <section class="demo" id="demo">
 <img class="fondo2" src="https://datcon.com.mx/images/programmer-2400-1601.jpg"></div>
         <div class="demo-container" style="z-index:  1;">
@@ -164,7 +164,7 @@
         </div>
     </section>
 
-    <!-- Pricing Section -->
+
     <section class="pricing" id="pricing">
         <div class="container">
             <h2 class="section-title scroll-animate">Planes que se adaptan a tu negocio</h2>
@@ -229,7 +229,7 @@
         </div>
     </section>
 
-    <!-- Final CTA -->
+
     <section class="final-cta">
         <div class="container scroll-animate">
             <h2>¿Listo para revolucionar tus ventas?</h2>
@@ -242,7 +242,7 @@
     </section>
 
     <script>
-        // Intersection Observer for scroll animations
+   
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -256,7 +256,7 @@
             });
         }, observerOptions);
 
-        // Observe all elements with scroll animation classes
+      
         document.addEventListener('DOMContentLoaded', () => {
             const animatedElements = document.querySelectorAll(
                 '.scroll-animate, .scroll-animate-left, .scroll-animate-right, .scroll-animate-scale, .scroll-animate-bounce'
@@ -267,13 +267,13 @@
             });
         });
 
-        // Scroll progress bar
+   
         window.addEventListener('scroll', () => {
             const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
             document.getElementById('scroll-progress').style.width = scrolled + '%';
         });
 
-        // Parallax effect for hero background
+        
         window.addEventListener('scroll', () => {
             const scrolled = window.scrollY;
             const parallaxElements = document.querySelectorAll('.parallax-bg');
@@ -284,7 +284,7 @@
             });
         });
 
-        // Counter animation for stats
+       
         function animateCounter(element, target, duration = 2000) {
             const start = 0;
             const increment = target / (duration / 16);
@@ -307,7 +307,7 @@
             }, 16);
         }
 
-        // Trigger counter animations when stats section is visible
+   
         const statsObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -327,7 +327,7 @@
             }
         });
 
-        // Live demo data updates
+        
         function updateLiveDemo() {
             const sales = document.getElementById('live-sales');
             const revenue = document.getElementById('live-revenue');
@@ -346,7 +346,7 @@
             ];
 
             if (sales && revenue && routes && products && lastSale) {
-                // Random updates
+               
                 const currentSales = parseInt(sales.textContent);
                 const currentRevenue = parseFloat(revenue.textContent.replace('', '').replace(',', ''));
                 
@@ -376,10 +376,10 @@ revenue.textContent = '+ ' + (revenueValue + Math.random() * 200).toLocaleString
             }
         }
 
-        // Update demo every 3-8 seconds
+      
         setInterval(updateLiveDemo, 3000 + Math.random() * 5000);
 
-        // Smooth scroll for anchor links
+ 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -393,19 +393,19 @@ revenue.textContent = '+ ' + (revenueValue + Math.random() * 200).toLocaleString
             });
         });
 
-        // Add scroll-triggered animations to elements as they enter viewport
+      
         function addScrollAnimations() {
             const elements = document.querySelectorAll('.feature-card, .stat-item, .pricing-card');
             
             elements.forEach((element, index) => {
-                // Add staggered delay based on position
+              
                 element.style.transitionDelay = (index % 6) * 0.1 + 's';
             });
         }
 
         document.addEventListener('DOMContentLoaded', addScrollAnimations);
 
-        // Mouse parallax effect on feature cards
+      
         document.addEventListener('mousemove', (e) => {
             const cards = document.querySelectorAll('.feature-card');
             const mouseX = e.clientX;
@@ -423,7 +423,7 @@ revenue.textContent = '+ ' + (revenueValue + Math.random() * 200).toLocaleString
             });
         });
 
-        // Reset card transforms when mouse leaves
+        
         document.addEventListener('mouseleave', () => {
             const cards = document.querySelectorAll('.feature-card');
             cards.forEach(card => {
